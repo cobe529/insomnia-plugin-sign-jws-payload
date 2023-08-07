@@ -1,0 +1,14 @@
+{
+  "name": "insomnia-plugin-sign-jws-payload",
+  "version": "0.0.1",
+  "private": true,
+  "insomnia": {
+    "name": "sign-jws-payload",
+    "displayName": "Sign JWS payload",
+    "description": "Convert request body into JWS format using a private key."
+  },
+  "main": "main.js",
+  "dependencies": {
+    "jws": "4.0.0"
+  }
+}
