@@ -1,0 +1,31 @@
+{
+  "name": "insomnia-plugin-sign-jws-payload",
+  "version": "0.0.1",
+  "private": true,
+  "insomnia": {
+    "name": "sign-jws-payload",
+    "displayName": "Sign JWS payload",
+    "description": "Convert request body into JWS using a private key."
+  },
+  "main": "main.js",
+  "dependencies": {
+    "jws": "4.0.0"
+  },
+  "description": "Convert request body into JWS using a private key.",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobe529/insomnia-plugin-sign-jws-payload.git"
+  },
+  "keywords": [
+    "Sign",
+    "JWS",
+    "payload"
+  ],
+  "author": "Erica Yap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cobe529/insomnia-plugin-sign-jws-payload/issues"
+  },
+  "homepage": "https://github.com/cobe529/insomnia-plugin-sign-jws-payload#readme"
+}
