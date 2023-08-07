@@ -1,7 +1,6 @@
 {
   "name": "insomnia-plugin-sign-jws-payload",
   "version": "0.0.1",
-  "private": true,
   "insomnia": {
     "name": "sign-jws-payload",
     "displayName": "Sign JWS payload",
