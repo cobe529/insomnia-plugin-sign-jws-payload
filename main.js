@@ -4,9 +4,9 @@ const specialHeaderName = "x-jws-private-key";
 
 module.exports.requestHooks = [
     (context) => {
-        let text;
-        try {
-            if (context.request.hasHeader(specialHeaderName)) {
+        if (context.request.hasHeader(specialHeaderName)) {
+            let text;
+            try {
                 const secret = context.request.getHeader(specialHeaderName);
                 const payload = JSON.parse(context.request.getBody().text);
                 text = jws.sign({
@@ -14,12 +14,12 @@ module.exports.requestHooks = [
                     payload,
                     secret,
                 });
+            } catch (e) {
+                context.app.alert("Error", "Encoding payload to JWS string failed.");
             }
-        } catch (e) {
-            context.app.alert("Error", "Encoding payload to JWS string failed.");
+            context.request.removeHeader(specialHeaderName);
+            context.request.setHeader("Content-Type", "text/plain");
+            context.request.setBody({ mimeType: "text/plain", text });
         }
-        context.request.removeHeader(specialHeaderName);
-        context.request.setHeader("Content-Type", "text/plain");
-        context.request.setBody({ mimeType: "text/plain", text });
     },
 ];
